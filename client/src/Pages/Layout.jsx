@@ -1,0 +1,32 @@
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import {useSelector} from 'react-redux'
+import { Loader } from 'lucide-react'
+import Login from './login'
+const Layout = () => {
+  const {user,loading}=useSelector(state=>state.auth)
+
+  if(loading){
+    return <Loader/>
+  }
+// If the user is logged in it will display, navbar and outlet
+// else automatically displays  login page
+  return (
+    <div>
+      {
+        user?(<div className='min-h-screen bg-gray-50'>
+      <Navbar/>
+    <Outlet />
+    </div>)
+    : <Login/>
+      }
+      
+
+    
+    
+    </div>
+  )
+}
+
+export default Layout
