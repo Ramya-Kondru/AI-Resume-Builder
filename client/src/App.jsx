@@ -5,7 +5,7 @@ import Layout from './Pages/Layout'
 import Dashboard from './Pages/Dashboard'
 import ResumeBuilder from './Pages/ResumeBuilder'
 import Preview from './Pages/Preview'
-import Login from './Pages/login'
+
 import { useDispatch } from 'react-redux'
 import api from './configs/api'
 import { login, setLoading } from './app/features/authSlice'
